@@ -43,24 +43,3 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
-#board_table{
-	margin-left: auto;
-	margin-right: auto;
-}
-
-#board_header{
-	background-color: dodgerblue;
-	color: white;
-}
-
-#board_paging{
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	aligin-items: center;
-}
-
-#board_paging div:first-child{
-	
-}
