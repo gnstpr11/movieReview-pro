@@ -8,8 +8,8 @@
 </head>
 <body>
 
-<div id="nav">
-	<%@ include file="../include/nav.jsp" %>
+<div id="navBar">
+	<%@ include file="../include/navBar.jsp" %>
 </div>
 
 <form method="post">

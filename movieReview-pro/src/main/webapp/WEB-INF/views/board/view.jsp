@@ -8,21 +8,9 @@
 </head>
 <body>
 
-<div id="nav">
-	<%@ include file="../include/nav.jsp" %>
+<div id="navBar">
+	<%@ include file="../include/navBar.jsp" %>
 </div>
-
-
-<!-- 
-<label>제목</label>
-${view.title}<br />
-
-<label>작성자</label>
-${view.writer}<br />
-
-<label>내용</label><br />
-${view.content}<br />
- -->
  
 <h2>${view.title}</h2>
 

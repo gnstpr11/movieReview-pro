@@ -1,18 +1,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시물 목록</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KH CINEMA</title>
 </head>
 <body>
 
-<div id="nav">
-	<%@ include file="../include/nav.jsp" %>
+<div id="navBar">
+	<%@ include file="../include/navBar.jsp" %>
 </div>
 
 <table>
@@ -89,6 +89,8 @@
 		<input type="text" name="keyword" value="${page.keyword}"/>
 		
 		<button type="button" id="searchBtn">검색</button>
+		
+		<a href="/board/write">글 작성</a>
 	</div>
 	
 </div>
