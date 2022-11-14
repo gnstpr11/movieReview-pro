@@ -7,26 +7,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="${path}/resources/css/style.css">
 <title>KH CINEMA</title>
 </head>
-<body>
+<body style="margin:0;">
 
 <div id="navBar">
 	<%@ include file="../include/navBar.jsp" %>
 </div>
 
-<table>
-	<thead>
+<table id="board_table">
+	<thead id="board_header">
 		<tr>
-			<th>번호</th>
-			<th>제목</th>
-			<th>작성일</th>
+			<th>리뷰 번호</th>
+			<th>리뷰 제목</th>
 			<th>작성자</th>
+			<th>작성일</th>
 			<th>조회수</th>
 		</tr>
 	</thead>
 	
-	<tbody>
+	<tbody id="borad_body">
 	
 		<c:forEach items="${list}" var="list">
 			<tr>
@@ -34,10 +35,10 @@
 				<td>
 					<a href="/board/view?bno=${list.bno}">${list.title}</a>
 				</td>
+				<td>${list.writer}</td>
 				<td>
 					<fmt:formatDate value="${list.regDate}" pattern="yyyy-MM-dd" />				
 				</td>
-				<td>${list.writer}</td>
 				<td>${list.viewCnt}</td>
 			</tr>
 		</c:forEach>
@@ -46,38 +47,31 @@
 
 </table>
 
-<div>
+<div id="board_paging">
 
-	<c:if test="${page.prev}">
-		<span>[ <a href="/board/listPageSearch?num=${page.startPageNum - 1}${page.searchTypeKeyword}">이전</a> ]</span>
-	</c:if>
-	
-	<c:forEach begin="${page.startPageNum}" end="${page.endPageNum}" var="num">
-		<span>
+	<div>
+		<c:if test="${page.prev}">
+			<span>[ <a href="/board/listPageSearch?num=${page.startPageNum - 1}${page.searchTypeKeyword}">이전</a> ]</span>
+		</c:if>
 		
-			<c:if test="${select != num}">
-				<a href="/board/listPageSearch?num=${num}${page.searchTypeKeyword}">${num}</a>
-			</c:if> 			
+		<c:forEach begin="${page.startPageNum}" end="${page.endPageNum}" var="num">
+			<span>
 			
-			<c:if test="${select == num}">
-				<b>${num}</b>
-			</c:if>
-	 			
-		</span>
-	</c:forEach>
-	
-	<c:if test="${page.next}">
-		<span>[ <a href="/board/listPageSearch?num=${page.endPageNum + 1}${page.searchTypeKeyword}">다음</a> ]</span>
-	</c:if>
-	
-	
-	<%-- <c:forEach begin="1" end="${pageNum}" var="num">
-  		<span>
-  			<a href="/board/listPage?num=${num}">${num}</a>
-		</span>
-	</c:forEach> --%>
-	
-	
+				<c:if test="${select != num}">
+					<a href="/board/listPageSearch?num=${num}${page.searchTypeKeyword}">${num}</a>
+				</c:if> 			
+				
+				<c:if test="${select == num}">
+					<b>${num}</b>
+				</c:if>
+		 			
+			</span>
+		</c:forEach>
+		
+		<c:if test="${page.next}">
+			<span>[ <a href="/board/listPageSearch?num=${page.endPageNum + 1}${page.searchTypeKeyword}">다음</a> ]</span>
+		</c:if>
+	</div>	
 	<div>
 		<select name="searchType">
 		    <option value="title" <c:if test="${page.searchType eq 'title'}">selected</c:if>>제목</option>
@@ -92,7 +86,7 @@
 		
 		<a href="/board/write">글 작성</a>
 	</div>
-	
+
 </div>
 
 <script>
