@@ -3,9 +3,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
-	<title>KH CINEMA</title>
+	<title>Home</title>
 </head>
 <body>
-<p><a href="/board/list">게시물 목록</a></p>
+
+<div id="nav">
+	<%@ include file="include/nav.jsp" %>
+</div>
+
+<div id="home_msg">
+	<p>
+		kuzuro board
+	</p>
+</div>
+
+<!-- 
+<h1>
+	Hello world!  
+</h1>
+
+<P>  The time on the server is ${serverTime}. </P>
+
+<p>
+<a href="/board/list">게시물 목록</a><br />
+<a href="/board/write">게시물 작성</a>
+</p>
+ -->
+
 </body>
 </html>
